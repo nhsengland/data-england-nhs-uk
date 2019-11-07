@@ -1,0 +1,23 @@
+- name: Setup the Git repo
+  git:
+    repo: "{{ GIT_REPO }}"
+    version: "{{ GIT_BRANCH }}"
+    dest: /var/www/html/data-england-nhs-uk
+    accept_hostkey: yes
+    force: yes
+
+- name: Symlink nginx
+  become: true
+  become: yes
+  template:
+    src: "templates/nginx.conf"
+    dest: "/etc/nginx/sites-enabled/default"
+    owner: root
+    group: root
+
+- name: Restart nginx
+  become: true
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
