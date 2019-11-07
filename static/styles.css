@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "Frutiger LT W01_45 Ligh1475730";
+  src: url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/81e3653a-53bd-49d9-a1f8-f924811b6f02.eot?#iefix");
+  src: url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/81e3653a-53bd-49d9-a1f8-f924811b6f02.eot?#iefix")
+      format("eot"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/087d8a95-3f25-4bae-a1d1-db9ddffd72f5.woff2")
+      format("woff2"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/ab1bcdf7-9570-4cba-a8e3-3e39ddd861db.woff")
+      format("woff"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/83c94878-06c8-442c-a7df-d520b0ced00b.ttf")
+      format("truetype"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/29f3ff8a-1719-4e25-a757-53ee1a1114a5.svg#29f3ff8a-1719-4e25-a757-53ee1a1114a5")
+      format("svg");
+}
+@font-face {
+  font-family: "Frutiger LT W01_55 Roma1475738";
+  src: url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/fe232554-5489-4874-bb45-bd966c8c5932.eot?#iefix");
+  src: url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/fe232554-5489-4874-bb45-bd966c8c5932.eot?#iefix")
+      format("eot"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/0811514e-6660-4043-92c1-23d0b8caaa2f.woff2")
+      format("woff2"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/aeae8cac-ba4d-40d2-bbcf-936f2c7dcfe6.woff")
+      format("woff"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/caedf2e6-fbef-4928-b08e-1f975981ae8d.ttf")
+      format("truetype"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/7def0e34-f28d-434f-b2ec-472bde847115.svg#7def0e34-f28d-434f-b2ec-472bde847115")
+      format("svg");
+}
+@font-face {
+  font-family: "Frutiger LT W01_65 Bold1475746";
+  src: url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eb06b4c3-c0fd-4cd0-a9d9-a2954f6839a7.eot?#iefix");
+  src: url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eb06b4c3-c0fd-4cd0-a9d9-a2954f6839a7.eot?#iefix")
+      format("eot"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/9bdfdcac-bbd4-46a9-9280-056c9a4438a2.woff")
+      format("woff"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/5dae3a6e-9b07-4c2f-aed2-1f5b8951261b.ttf")
+      format("truetype"),
+    url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eae74276-dd78-47e4-9b27-dac81c3411ca.svg#eae74276-dd78-47e4-9b27-dac81c3411ca")
+      format("svg");
+}
+
+body {
+  background: #fff;
+  margin-top: 0;
+  box-sizing: border-box;
+  color: #202a30;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", Roboto,
+    "Segoe UI", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Frutiger LT W01_65 Bold1475746", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+}
+
+.banner-head {
+  background-color: #0072ce;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+}
+.form-nav {
+  display: inline-block;
+  width: 110px;
+}
+.header-img {
+  max-width: 100%;
+  border: 5px solid #e8edee;
+}
+.nhs-england-well {
+  padding: 60px;
+  background-color: #e8edee;
+  margin: 0 0 30px;
+}
+header.masthead {
+  background-color: #005eb8;
+  color: #fff;
+  padding: 54px 0 0 0;
+}
+header.masthead .container {
+  overflow-y: hidden;
+}
+header.masthead .logo img {
+  display: inline-block;
+  height: 90px;
+  width: auto;
+}
+.header-strapline {
+  position: relative;
+}
+header.masthead .subtitle {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  padding-left: 30px;
+  color: #fff;
+}
+header.masthead .banner {
+  height: 140px;
+}
+header.masthead .header-nav {
+  height: 35px;
+}
+header.masthead ul {
+  padding-left: 0;
+}
+header.masthead li {
+  display: inline-block;
+}
+header.masthead li a {
+  padding: 15px 30px;
+  color: #fff;
+}
+header.masthead li a:hover {
+  background-color: #0072ce;
+  color: #fff;
+  text-decoration: none;
+}
+footer {
+  color: #425563;
+  padding: 1px 0;
+}
+footer .footer-logo {
+  height: 70px;
+  width: auto;
+}
+footer .nav {
+  float: left;
+}
+footer .nav a {
+  color: #425563;
+  padding: 1px 0;
+}
+footer .nav > li {
+  position: relative;
+  display: block;
+}
+.main-content {
+  margin-top: 20px;
+}
+h1 {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.link:hover {
+  fill: #005eb8;
+}
+.hidden-form {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+a.version-menu {
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-right: 1px solid #0072ce;
+  margin-left: 0;
+  margin-right: 0;
+}
+a.version-menu:first-child {
+  border-right: none;
+}
+a.version-menu:hover {
+  color: #fff;
+  background-color: #0072ce;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.top-logo{
+    padding-left: 30px
+}
+
+.footer{
+    margin-top: 0;
+}
+
+.project-image{
+    height: 353px;
+    overflow: hidden;
+    border: 5px solid #adbcc7;
+}
+
+.project-image img{
+    height: 353px;
+}
+
+.shaded-area{
+    background-color: #e8edee;
+    padding-bottom: 1px;
+}
+
+.page-template-page-components .components .row.margin-top-none{
+    margin-top: 0;
+}
