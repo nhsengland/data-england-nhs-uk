@@ -178,9 +178,59 @@ a.version-menu:hover {
   text-decoration: none;
 }
 
+.header-pic{
+    background-image: url('imgs/big-data-2001190_640.jpg');
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+}
 
-.top-logo{
-    padding-left: 30px
+.header-subtitle{
+    color: #425563;
+    font-weight: 700;
+}
+
+.header-banner{
+    background-color: rgba(232,237,238,0.8);
+}
+
+.title-container{
+    margin: 30px 0 30px 0;
+    padding: 30px 0 10px 30px;
+}
+
+.title-container h1{
+    font-family: "Frutiger LT W01_65 Bold1475746",-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue",Sans-Serif;
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.content-offset{
+    margin-top: 50px;
+}
+
+.content-offset-20{
+    margin-top: 20px;
+}
+
+strong{
+    color: #425563;
+    font-weight: 700;
+}
+p.content{
+    margin-top: 20px;
+}
+
+.section-title-block h2{
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.section{
+    padding-top: 10px;
+    padding-bottom: 60px;
 }
 
 .footer{
@@ -191,6 +241,7 @@ a.version-menu:hover {
     height: 353px;
     overflow: hidden;
     border: 5px solid #adbcc7;
+    display: inline-block;
 }
 
 .project-image img{
