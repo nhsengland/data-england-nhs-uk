@@ -1,3 +1,0 @@
-application_name: data-england-nhs-uk
-GIT_REPO: "https://github.com/nhsengland/{{ application_name }}.git"
-GIT_BRANCH: master
