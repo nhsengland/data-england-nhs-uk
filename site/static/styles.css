@@ -178,12 +178,21 @@ a.version-menu:hover {
   text-decoration: none;
 }
 
-.header-pic{
-    background-image: url('imgs/big-data-2001190_640.jpg');
+.header-banner{
     width: 100%;
     padding-top: 80px;
     padding-bottom: 80px;
     position: relative;
+}
+
+.header-pic{
+    background-image: url('imgs/big-data-2001190_640.jpg');
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
 }
 
 .header-subtitle{
@@ -192,19 +201,25 @@ a.version-menu:hover {
 }
 
 .header-banner{
+    position: relative;
+}
+
+.white-banner{
     background-color: rgba(232,237,238,0.8);
+    position: relative;
+    z-index:10;
 }
 
 .title-container{
     margin: 30px 0 30px 0;
-    padding: 30px 0 10px 30px;
+    padding: 30px 0 30px 30px;
 }
 
 .title-container h1{
     font-family: "Frutiger LT W01_65 Bold1475746",-apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue",Sans-Serif;
     font-size: 36px;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .content-offset{
@@ -213,6 +228,10 @@ a.version-menu:hover {
 
 .content-offset-20{
     margin-top: 20px;
+}
+
+.footer-links{
+    font-size: 18px;
 }
 
 strong{
@@ -245,7 +264,8 @@ p.content{
 }
 
 .project-image img{
-    height: 353px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .shaded-area{
@@ -255,4 +275,51 @@ p.content{
 
 .page-template-page-components .components .row.margin-top-none{
     margin-top: 0;
+}
+
+
+.social-network-links a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.social-network-links a:hover{
+    text-decoration: none;
+}
+
+.social-network-links a:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: center center;
+    z-index: 1000;
+    padding: 5px;
+    border: 2px solid #adbcc7;
+}
+
+.social-network-links a[href^="http://feeds.feedburner.com/"]:before {
+    background-image: url("imgs/icons/rss.svg");
+}
+
+.social-network-links a[href^="http://flickr.com/"]:before, .social-network-links a[href^="http://www.flickr.com/"]:before, .social-network-links a[href^="https://flickr.com/"]:before, .social-network-links a[href^="https://www.flickr.com/"]:before {
+    background-image: url("imgs/icons/flickr.svg");
+}
+
+.social-network-links a[href^="http://youtube.com/"]:before, .social-network-links a[href^="http://www.youtube.com/"]:before, .social-network-links a[href^="https://youtube.com/"]:before, .social-network-links a[href^="https://www.youtube.com/"]:before {
+    background-image: url("imgs/icons/youtube.svg");
+}
+
+.social-network-links a[href^="http://linkedin.com/"]:before, .social-network-links a[href^="http://www.linkedin.com/"]:before, .social-network-links a[href^="https://linkedin.com/"]:before, .social-network-links a[href^="https://www.linkedin.com/"]:before {
+    background-image: url("imgs/icons/linkedin.svg");
+}
+
+.social-network-links a[href^="http://twitter.com/"]:before, .social-network-links a[href^="http://www.twitter.com/"]:before, .social-network-links a[href^="https://twitter.com/"]:before, .social-network-links a[href^="https://www.twitter.com/"]:before {
+    background-image: url("imgs/icons/twitter.svg");
+}
+
+.choices-logo{
+    height: 70px;
 }
