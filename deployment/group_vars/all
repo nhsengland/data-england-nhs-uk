@@ -1,0 +1,4 @@
+PROJECT_PATH: "/var/www/html/home_page"
+GIT_REPO: "https://github.com/nhsengland/data-england-nhs-uk.git"
+GIT_BRANCH: "just-page"
+DOMAIN: "data.openhealthcare.org.uk"

@@ -1,0 +1,98 @@
+---
+- name: update apt-cache
+  become: true
+  apt:
+    update_cache: yes
+
+- name: install packages for sysadmin
+  apt:
+    pkg: [
+      'ack-grep',
+      'build-essential',
+      'emacs',
+      'git',
+      'htop',
+      'iotop',
+      'nginx',
+      'screen',
+      'tree',
+      'vim',
+      'zip',
+    ]
+    state: present
+
+- name: Setup the Git repo
+  git:
+    repo: "{{ GIT_REPO }}"
+    version: "{{ GIT_BRANCH }}"
+    dest: "{{ PROJECT_PATH }}"
+    accept_hostkey: yes
+    force: yes
+
+- name: Remove old nginx default
+  become: true
+  file:
+    state: absent
+    path: "/etc/nginx/sites-available/default"
+
+- name: Symlink nginx
+  become: true
+  template:
+    src: "templates/nginx.blank.conf"
+    dest: "/etc/nginx/sites-available/default"
+    owner: root
+    group: root
+
+- name: Restart nginx
+  become: true
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+- name: add certbot PPA
+  become: true
+  when: not DEV
+  apt_repository:
+    repo: 'ppa:certbot/certbot'
+    update_cache: true
+
+- name: install certbot
+  become: true
+  when: not DEV
+  apt:
+    pkg: python-certbot-nginx
+    state: present
+
+- name: generate cert with Lets Encrypt
+  when: not DEV
+  become: true
+  command: "certbot certonly --nginx -n -d {{ DOMAIN }} --agree-tos -m support@openhealthcare.org.uk"
+
+- name: Remove old nginx default
+  file:
+    state: absent
+    path: "/etc/nginx/sites-available/default"
+
+- name: Symlink nginx
+  when: not DEV
+  template:
+    src: "templates/nginx_prod.conf"
+    dest: "/etc/nginx/sites-available/default"
+    owner: root
+    group: root
+
+- name: Symlink nginx
+  when: DEV
+  template:
+    src: "templates/nginx_dev.conf"
+    dest: "/etc/nginx/sites-available/default"
+    owner: root
+    group: root
+
+- name: Restart nginx
+  become: true
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
