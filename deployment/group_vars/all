@@ -1,4 +1,6 @@
 PROJECT_PATH: "/var/www/html/home_page"
 GIT_REPO: "https://github.com/nhsengland/data-england-nhs-uk.git"
 GIT_BRANCH: "just-page"
-DOMAIN: "data.openhealthcare.org.uk"
+DOMAIN: "data.england.nhs.uk"
+NCDR_IP_ADDRESS: "1.1.1.1"
+SUDGT_IP_ADDRESS: "34.246.68.117"
