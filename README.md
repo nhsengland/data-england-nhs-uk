@@ -1,7 +1,7 @@
 The home page for [data.england.nhs.uk](https://data.england.nhs.uk)
 
 deployment.
-update your hosts file with the server
+update your hosts.dev file with the correct server
 e.g.
 ```
 [webserver]
