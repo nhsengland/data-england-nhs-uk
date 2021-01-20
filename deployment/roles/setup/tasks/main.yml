@@ -25,7 +25,7 @@
   git:
     repo: "{{ GIT_REPO }}"
     version: "{{ GIT_BRANCH }}"
-    dest: "{{ PROJECT_PATH }}"
+    dest: "/var/www/html/home_page"
     accept_hostkey: yes
     force: yes
 
