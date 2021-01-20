@@ -41,6 +41,18 @@
   become: true
   command: "cp -r /home/ubuntu/datadirectory/_site /var/www/html/datadirectory"
 
+- name: Setup the covid ref lib
+  git:
+    repo: "{{ COVID_REF_LIB_REPO }}"
+    version: "{{ COVID_REF_LIB_BRANCH }}"
+    dest: "/home/ubuntu/covid-19"
+    accept_hostkey: yes
+    force: yes
+
+- name: Move the _site dirctory into position for the data directory
+  become: true
+  command: "cp -r /home/ubuntu/covid-19/_site /var/www/html/covid-19"
+
 - name: Remove old nginx default
   become: true
   file:
