@@ -1,9 +1,0 @@
----
-- name: Deploy the static site
-  become: yes
-  user: ubuntu
-  hosts: webserver
-  gather_facts: no
-  roles:
-    - server
-    - site
