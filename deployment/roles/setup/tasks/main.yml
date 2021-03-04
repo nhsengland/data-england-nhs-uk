@@ -18,6 +18,7 @@
       'tree',
       'vim',
       'zip',
+      'logrotate',
     ]
     state: present
 
