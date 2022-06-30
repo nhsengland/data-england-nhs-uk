@@ -1,0 +1,7 @@
+---
+- name: Setup
+  user: ubuntu
+  become: true
+  hosts: webserver
+  roles:
+    - setup

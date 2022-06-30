@@ -1,0 +1,111 @@
+---
+- name: update apt-cache
+  become: true
+  apt:
+    update_cache: yes
+
+- name: install packages for sysadmin
+  apt:
+    pkg: [
+      'ack-grep',
+      'build-essential',
+      'emacs',
+      'git',
+      'htop',
+      'iotop',
+      'nginx',
+      'screen',
+      'tree',
+      'vim',
+      'zip',
+      'logrotate',
+    ]
+    state: present
+
+- name: Setup the Git repo
+  git:
+    repo: "{{ GIT_REPO }}"
+    version: "{{ GIT_BRANCH }}"
+    dest: "/var/www/html/home_page"
+    accept_hostkey: yes
+    force: yes
+
+- name: Setup the data directory repo
+  git:
+    repo: "{{ DATA_DIRECTORY_REPO }}"
+    version: "{{ DATA_DIRECTORY_BRANCH }}"
+    dest: "/home/ubuntu/datadirectory"
+    accept_hostkey: yes
+    force: yes
+
+- name: Move the _site dirctory into position for the data directory
+  become: true
+  command: "cp -r /home/ubuntu/datadirectory/_site /var/www/html/datadirectory"
+
+- name: Setup the covid ref lib
+  git:
+    repo: "{{ COVID_REF_LIB_REPO }}"
+    version: "{{ COVID_REF_LIB_BRANCH }}"
+    dest: "/home/ubuntu/covid-19"
+    accept_hostkey: yes
+    force: yes
+
+- name: Move the _site dirctory into position for the data directory
+  become: true
+  command: "cp -r /home/ubuntu/covid-19/_site /var/www/html/covid-19"
+
+- name: Remove old nginx default
+  become: true
+  file:
+    state: absent
+    path: "/etc/nginx/sites-enabled/default"
+
+- name: Symlink nginx
+  become: true
+  template:
+    src: "templates/nginx.blank.conf"
+    dest: "/etc/nginx/sites-enabled/default"
+    owner: root
+    group: root
+
+- name: Restart nginx
+  become: true
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+- name: add certbot PPA
+  become: true
+  apt_repository:
+    repo: 'ppa:certbot/certbot'
+    update_cache: true
+
+- name: install certbot
+  become: true
+  apt:
+    pkg: python-certbot-nginx
+    state: present
+
+- name: generate cert with Lets Encrypt
+  become: true
+  command: "certbot certonly --nginx -n -d {{ DOMAIN }} --agree-tos -m support@openhealthcare.org.uk"
+
+- name: Remove old nginx default
+  file:
+    state: absent
+    path: "/etc/nginx/sites-available/default"
+
+- name: Symlink nginx
+  template:
+    src: "templates/nginx_prod.conf"
+    dest: "/etc/nginx/sites-enabled/default"
+    owner: root
+    group: root
+
+- name: Restart nginx
+  become: true
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes

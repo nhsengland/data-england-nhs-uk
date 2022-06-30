@@ -1,6 +1,7 @@
 *~
 *.sqlite
 *.pyc
+*.retry
 */assets/js/*
 */assets/css/*
 */assets/img/*
