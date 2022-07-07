@@ -75,17 +75,11 @@
     state: restarted
     enabled: yes
 
-- name: add certbot PPA
-  become: true
-  apt_repository:
-    repo: 'ppa:certbot/certbot'
-    update_cache: true
-
 - name: install certbot
   become: true
   apt:
-    pkg: python-certbot-nginx
-    state: present
+    pkg: python3-certbot-nginx
+    update_cache: true
 
 - name: generate cert with Lets Encrypt
   become: true
