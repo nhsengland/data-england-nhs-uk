@@ -257,7 +257,6 @@ p.content{
 }
 
 .project-image{
-    height: 353px;
     overflow: hidden;
     border: 5px solid #adbcc7;
     display: inline-block;
@@ -266,6 +265,7 @@ p.content{
 .project-image img{
     width: 100%;
     overflow: hidden;
+    margin-bottom: -10px;
 }
 
 .shaded-area{
@@ -322,4 +322,28 @@ p.content{
 
 .choices-logo{
     height: 70px;
+}
+
+
+@media (max-width:950px)  {
+  .project{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .small-project-top{
+    margin-top: 50px;
+  }
+
+  .small-project-bottom{
+    margin-bottom: 50px;
+  }
+
+  .small-project-bottom .content-offset{
+    margin-top: 20px;
+  }
+
+  .section{
+    padding-bottom: 0;
+  }
 }
